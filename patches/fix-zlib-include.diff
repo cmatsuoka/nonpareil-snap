@@ -1,0 +1,11 @@
+diff -rud x/nonpareil-0.79/src/printer.c nonpareil-0.79/src/printer.c
+--- x/nonpareil-0.79/src/printer.c	2008-08-24 00:37:18.000000000 +0000
++++ nonpareil-0.79/src/printer.c	2020-05-23 17:37:21.825127579 +0000
+@@ -28,6 +28,7 @@
+ #include <gdk/gdk.h>
+ #include <gtk/gtk.h>
+ 
++#include <zlib.h>
+ #include <png.h>
+ 
+ #include "util.h"

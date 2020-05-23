@@ -1,0 +1,86 @@
+name: nonpareil-cm
+base: core18
+summary: A high-fidelity simulator for calculators
+description: |
+  Nonpareil simulates many HP calculators models introduced between 1972
+  and 1982. Simulation fidelity is achieved through the use of the actual
+  microcode of the calculators, thus in most cases the simulation behavior
+  exactly matches that of the real calculator. In particular, numerical
+  results will be identical, because the simulator is using the BCD
+  arithmetic algorithms from the calculator.
+grade: devel
+confinement: strict
+adopt-info: nonpareil
+
+apps:
+  nonpareil-cm:
+    command: usr/bin/nonpareil
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
+    extensions: [gnome-3-28]
+
+  modutil:
+    command: usr/bin/modutil
+    plugs:
+      - home
+
+  uasm:
+    command: usr/bin/uasm
+    plugs:
+      - home
+
+parts:
+  nonpareil:
+    plugin: nil
+    source: https://nonpareil.brouhaha.com/download/nonpareil-0.79.tar.gz
+    after: [patches, scons]
+    build-packages:
+      - build-essential
+      - libsdl-dev
+      - libgtk2.0-dev
+      - libxml2-dev
+      - flex
+      - bison
+    stage-packages:
+      - libsdl1.2debian
+      - libglu1-mesa
+      - libgtk2.0-0
+      - libslang2
+    override-pull: |
+      snapcraftctl pull
+      version=$(sed -n '/^release =/s/.*'"'"'\(.*\)'"'"'.*/\1/p' < SConstruct)
+      snapcraftctl set-version "$version"
+      patch -d "$SNAPCRAFT_PART_SRC" -p1 < "$SNAPCRAFT_STAGE"/fix-zlib-include.diff
+    override-build: |
+      scons prefix=/usr
+      scons install prefix=/usr destdir="$SNAPCRAFT_PART_INSTALL"
+    prime:
+      - -usr/share/doc
+      - -usr/share/man
+      - -usr/share/lintian
+      - -usr/share/icons
+    
+  scons:
+    plugin: python
+    python-version: python2
+    source: https://sourceforge.net/projects/scons/files/scons/1.0.0/scons-1.0.0.tar.gz
+    prime:
+      - -*
+
+  patches:
+    plugin: dump
+    source: patches
+    prime:
+      - -*
+
+layout:
+  /usr/lib/nonpareil:
+    symlink: $SNAP/usr/lib/nonpareil
