@@ -8,261 +8,29 @@ description: |
   exactly matches that of the real calculator. In particular, numerical
   results will be identical, because the simulator is using the BCD
   arithmetic algorithms from the calculator.
+license: GPL-2.0
 grade: devel
 confinement: strict
 adopt-info: nonpareil
-
-apps:
-  nonpareil-cm:
-    command: usr/bin/nonpareil
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "21":
-    command: usr/bin/21
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "25":
-    command: usr/bin/25
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "32e":
-    command: usr/bin/32e
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "33c":
-    command: usr/bin/33c
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "34c":
-    command: usr/bin/34c
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "35":
-    command: usr/bin/35
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "35":
-    command: usr/bin/35
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "37e":
-    command: usr/bin/37e
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "38c":
-    command: usr/bin/38c
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "38e":
-    command: usr/bin/38e
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "41cv":
-    command: usr/bin/41cv
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "41cx":
-    command: usr/bin/41cx
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "45":
-    command: usr/bin/45
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "55":
-    command: usr/bin/55
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  "80":
-    command: usr/bin/80
-    plugs:
-      - home
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
-
-  modutil:
-    command: usr/bin/modutil
-    plugs:
-      - home
-
-  uasm:
-    command: usr/bin/uasm
-    plugs:
-      - home
 
 parts:
   nonpareil:
     plugin: nil
     source: https://nonpareil.brouhaha.com/download/nonpareil-0.79.tar.gz
-    after: [patches, scons]
+    after: [patches, scons, desktop-gtk2]
     build-packages:
-      - build-essential
       - libsdl-dev
-      - libgtk2.0-dev
       - libxml2-dev
       - flex
+      - bison
     stage-packages:
       - libsdl1.2debian
-      - libglu1-mesa
-      - libgtk2.0-0
+      - libcanberra-gtk-module
       - libslang2
+      - libgl1
+      - libglu1-mesa
+      - libglvnd0
+      - libglx0
     override-pull: |
       snapcraftctl pull
       version=$(sed -n '/^release =/s/.*'"'"'\(.*\)'"'"'.*/\1/p' < SConstruct)
@@ -277,8 +45,10 @@ parts:
     prime:
       - -usr/share/doc
       - -usr/share/man
+      - -usr/share/bug
       - -usr/share/lintian
       - -usr/share/icons
+      - -usr/share/sounds
 
   scons:
     plugin: python
@@ -293,6 +63,262 @@ parts:
     prime:
       - -*
 
+  desktop-gtk2:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: gtk
+    plugin: make
+    make-parameters: ["FLAVOR=gtk2"]
+    build-packages:
+      - build-essential
+      - libgtk2.0-dev
+    stage-packages:
+      - libxkbcommon0  # XKB_CONFIG_ROOT
+      - ttf-ubuntu-font-family
+      - dmz-cursor-theme
+      - light-themes
+      #- adwaita-icon-theme
+      #- gnome-themes-standard
+      #- shared-mime-info
+      - libgtk2.0-0
+      - libgdk-pixbuf2.0-0
+      - libglib2.0-bin
+      - libgtk2.0-bin
+      - unity-gtk2-module
+      - locales-all
+      - libappindicator1
+      - xdg-user-dirs
+      - ibus-gtk
+      - libibus-1.0-5
+      - gtk2-engines-pixbuf
+    prime:
+      - -usr/share/doc
+      - -usr/share/man
+      - -usr/share/icons
+      - -usr/share/fonts
+      - -usr/share/lintian
+
+apps:
+  nonpareil-cm:
+    command: desktop-launch $SNAP/usr/bin/nonpareil
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  modutil:
+    command: desktop-launch $SNAP/usr/bin/modutil
+    plugs:
+      - home
+
+  uasm:
+    command: desktop-launch $SNAP/usr/bin/uasm
+    plugs:
+      - home
+
+  "21":
+    command: desktop-launch $SNAP/usr/bin/21
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "25":
+    command: desktop-launch $SNAP/usr/bin/25
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "32e":
+    command: desktop-launch $SNAP/usr/bin/32e
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "33c":
+    command: desktop-launch $SNAP/usr/bin/33c
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "34c":
+    command: desktop-launch $SNAP/usr/bin/34c
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "35":
+    command: desktop-launch $SNAP/usr/bin/35
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "35":
+    command: desktop-launch $SNAP/usr/bin/35
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "37e":
+    command: desktop-launch $SNAP/usr/bin/37e
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "38c":
+    command: desktop-launch $SNAP/usr/bin/38c
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "38e":
+    command: desktop-launch $SNAP/usr/bin/38e
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "41cv":
+    command: desktop-launch $SNAP/usr/bin/41cv
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "41cx":
+    command: desktop-launch $SNAP/usr/bin/41cx
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "45":
+    command: desktop-launch $SNAP/usr/bin/45
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "55":
+    command: desktop-launch $SNAP/usr/bin/55
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
+  "80":
+    command: desktop-launch $SNAP/usr/bin/80
+    plugs:
+      - home
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - pulseaudio
+      - audio-playback
+      - mount-observe
+
 layout:
   /usr/lib/nonpareil:
     symlink: $SNAP/usr/lib/nonpareil
+
+plugs:
+  gtk-2-engines:
+    interface: content
+    target: $SNAP/lib/gtk-2.0
+    default-provider: gtk2-common-themes
+  gtk-2-themes:
+    interface: content
+    target: $SNAP/data-dir/themes
+    default-provider: gtk-common-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/data-dir/icons
+    default-provider: gtk-common-themes
+  sound-themes:
+    interface: content
+    target: $SNAP/data-dir/sounds
+    default-provider: gtk-common-themes
+
