@@ -36,6 +36,7 @@ parts:
       version=$(sed -n '/^release =/s/.*'"'"'\(.*\)'"'"'.*/\1/p' < SConstruct)
       snapcraftctl set-version "$version"
       patch -d "$SNAPCRAFT_PART_SRC" -p1 < "$SNAPCRAFT_STAGE"/fix-zlib-include.diff
+      patch -d "$SNAPCRAFT_PART_SRC" -p1 < "$SNAPCRAFT_STAGE"/fix-addr-type-s390x.diff
     override-build: |
       scons prefix=/usr
       scons install prefix=/usr destdir="$SNAPCRAFT_PART_INSTALL"

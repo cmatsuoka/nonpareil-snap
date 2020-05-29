@@ -1,0 +1,13 @@
+diff -rud x/nonpareil-0.79/src/proc.h nonpareil-0.79/src/proc.h
+--- x/nonpareil-0.79/src/proc.h	2020-05-24 16:49:57.608592018 -0300
++++ nonpareil-0.79/src/proc.h	2020-05-29 17:35:58.041777870 -0300
+@@ -45,6 +45,9 @@
+ };
+ 
+ 
++// workaround for conflict with system-defined type
++#define addr_t addr_t_
++
+ typedef uint32_t addr_t;
+ 
+ typedef uint16_t rom_word_t;
