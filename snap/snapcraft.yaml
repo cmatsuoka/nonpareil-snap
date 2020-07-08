@@ -9,7 +9,7 @@ description: |
   results will be identical, because the simulator is using the BCD
   arithmetic algorithms from the calculator.
 license: GPL-2.0
-grade: devel
+grade: stable
 confinement: strict
 adopt-info: nonpareil
 
@@ -78,7 +78,7 @@ parts:
       - dmz-cursor-theme
       - light-themes
       #- adwaita-icon-theme
-      #- gnome-themes-standard
+      - gnome-themes-standard
       #- shared-mime-info
       - libgtk2.0-0
       - libgdk-pixbuf2.0-0
