@@ -99,7 +99,7 @@ parts:
       - -usr/share/lintian
 
 apps:
-  nonpareil-cm:
+  nonpareil:
     command: desktop-launch $SNAP/usr/bin/nonpareil
     plugs:
       - home
