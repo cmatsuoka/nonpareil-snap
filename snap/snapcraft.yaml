@@ -200,19 +200,6 @@ apps:
       - audio-playback
       - mount-observe
 
-  "35":
-    command: desktop-launch $SNAP/usr/bin/35
-    plugs:
-      - home
-      - x11
-      - wayland
-      - unity7
-      - desktop
-      - desktop-legacy
-      - pulseaudio
-      - audio-playback
-      - mount-observe
-
   "37e":
     command: desktop-launch $SNAP/usr/bin/37e
     plugs:
