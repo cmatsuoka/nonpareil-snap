@@ -1,0 +1,11 @@
+--- a/src/asm.h	2022-11-13 19:24:08.376072560 -0300
++++ b/src/asm.h	2022-11-13 19:24:18.916195074 -0300
+@@ -22,7 +22,7 @@
+ 
+ extern int arch;
+ 
+-int pass;
++extern int pass;
+ extern int lineno;
+ extern int errors;
+ 
