@@ -15,7 +15,10 @@ adopt-info: nonpareil
 
 parts:
   nonpareil:
-    plugin: nil
+    plugin: scons
+    scons-parameters:
+      - prefix=/usr
+      - destdir="$CRAFT_PART_INSTALL"
     source: https://nonpareil.brouhaha.com/download/nonpareil-0.79.tar.gz
     after: [desktop-gtk2]
     build-packages:
@@ -41,8 +44,7 @@ parts:
       patch -d "$CRAFT_PART_SRC" -p1 < "$CRAFT_PROJECT_DIR"/patches/update-scons-syntax.diff
       patch -d "$CRAFT_PART_SRC" -p1 < "$CRAFT_PROJECT_DIR"/patches/fix-src-asm-header.diff
     override-build: |
-      scons prefix=/usr
-      scons install prefix=/usr destdir="$SNAPCRAFT_PART_INSTALL"
+      craftctl default
       for model in 21 25 32e 33c 34c 35 37e 38c 38e 41cv 41cx 45 55 80; do
         ln -v "$CRAFT_PART_INSTALL"/usr/bin/nonpareil "$CRAFT_PART_INSTALL"/usr/bin/$model; \
       done
